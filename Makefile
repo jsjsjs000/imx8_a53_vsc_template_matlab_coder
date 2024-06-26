@@ -5,6 +5,7 @@ BUILD_PATH=build
 PROGRAM=hello
 
 all: main.c
+	mkdir -p ${BUILD_PATH}
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) main.c euclidean.c euclidean_initialize.c euclidean_terminate.c -lm -o ${BUILD_PATH}/${PROGRAM}
 clean:
 	rm -f ${BUILD_PATH}/${PROGRAM}
