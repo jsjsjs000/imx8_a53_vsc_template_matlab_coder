@@ -1,0 +1,20 @@
+{
+		/* Target Device Settings */
+	"TARGET_IP": "192.168.30.11",
+	"REMOTE_DIR": "/root",
+	"BUILD_PATH": "build",
+	"PROGRAM": "hello",
+
+		/* Yocto SDK Configuration */
+	"ARCH": "aarch64-phytec-linux",
+	"OECORE_NATIVE_SYSROOT": "/opt/ampliphy-vendor-xwayland/BSP-Yocto-NXP-i.MX8MP-PD23.1.0/sysroots/x86_64-phytecsdk-linux",
+	"SDKTARGETSYSROOT": "/opt/ampliphy-vendor-xwayland/BSP-Yocto-NXP-i.MX8MP-PD23.1.0/sysroots/cortexa53-crypto-phytec-linux",
+
+		/* Yocto SDK Constants */
+	"CC_PREFIX": "${config:OECORE_NATIVE_SYSROOT}/usr/bin/${config:ARCH}/${config:ARCH}-",
+	"CXX": "${config:CC_PREFIX}g++ --sysroot=${config:SDKTARGETSYSROOT}",
+	"CC": "${config:CC_PREFIX}gcc --sysroot=${config:SDKTARGETSYSROOT}",
+	"files.associations": {
+		"math.h": "c"
+	},
+}
