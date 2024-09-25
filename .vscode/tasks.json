@@ -44,7 +44,11 @@
 			"label": "build",
 			"type": "shell",
 			"command": "mkdir -p ${config:BUILD_PATH}; make clean; make -j$(nproc) && scp ${config:BUILD_PATH}/${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM}",
-			"problemMatcher": ["$gcc"]
+			"problemMatcher": ["$gcc"],
+						"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		},
 	]
 }
